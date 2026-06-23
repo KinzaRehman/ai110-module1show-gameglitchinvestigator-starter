@@ -40,21 +40,28 @@ This was based on a 0 shot promt where AI assumed all score calcuations were cau
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
+To verify a bug was fixed i looked at the logic_utils.py and bascktracked what the logic was and suggested fix. Then created test cases and ran the text cases through py test, if it passed then using streamlit reassessed the game behaviour to see if it was acting the way we wanted the logic to behave. 
 - Describe at least one test you ran (manual or using pytest)  
+ I ran pytest using `.\venv\Scripts\python.exe -m pytest` to verify the game logic. The tests checked that guesses above the secret number return “Too High,” guesses below return “Too Low,” correct guesses return a win result, and each difficulty level uses the correct number range. After fixing the logic, all tests passed.
   and what it showed you about your code.
+ This showed that the main game logic was working correctly after the fixes. The code now gives the right high/low hints, uses the correct range for each difficulty level, and can be tested separately from the Streamlit UI because the logic was moved into logic_utils.py.
 - Did AI help you design or understand any tests? How?
-
+Yes. AI helped me design the pytest tests by suggesting specific behaviors to verify, such as checking that guesses above the secret return “Too High,” guesses below return “Too Low,” and a correct guess returns a win result. AI also suggested tests for the difficulty ranges. I reviewed the suggestions, adjusted them to match the actual function outputs, and then used pytest to verify that the code behaved correctly.
 ---
 
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-
+I would explain Streamlit reruns as the app restarting from the top every time a user interacts with it, such as clicking a button or entering text. Without session state, the app would forget everything on each rerun. Session state acts like the app’s memory, storing values such as the secret number, score, attempts, and game status so they persist across reruns and the game can continue correctly.
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
+One strategy I want to reuse is writing and running tests immediately after making a code change. Creating small pytest tests helped me verify that each bug fix worked as expected and prevented me from introducing new issues while refactoring the code. Its a proccess but a helpful one! 
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+
 - What is one thing you would do differently next time you work with AI on a coding task?
+Next time, I would provide the AI with more context upfront, including the relevant files and expected behavior, before asking for a fix. This would reduce incorrect suggestions and make it easier to review smaller, more focused changes. Providing a balanced amount of information I beleive would have helped me resolve the issues faster. 
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+This project showed me that AI-generated code can be a useful starting point, but it still requires careful review, testing, and validation! I learned that AI works best as a collaborator that helps generate ideas and drafts, while the developer remains responsible for verifying correctness. It can create alot in miliseconds however the app behavior still needs to be validated through the person!

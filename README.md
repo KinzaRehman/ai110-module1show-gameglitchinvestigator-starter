@@ -31,13 +31,19 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📸 Demo Walkthrough
 
-Describe your fixed game in numbered steps so a reader can follow along without watching a video:
+## Demo Walkthrough
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. The user selects a difficulty level (Easy, Normal, or Hard).
+2. The game generates a random secret number within the selected range.
+3. The user enters a guess of 40.
+4. The game returns "Too Low" and displays the hint "Go HIGHER!"
+5. The user enters a guess of 70.
+6. The game returns "Too High" and displays the hint "Go LOWER!"
+7. The user enters a guess of 55.
+8. The game returns "Correct!" and displays a win message.
+9. The final score is calculated based on how quickly the user guessed the correct number.
+10. The user can start a new game, which resets the score, attempts, history, and secret number while preserving the selected difficulty.
+>
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
