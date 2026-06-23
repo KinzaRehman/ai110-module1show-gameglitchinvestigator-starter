@@ -33,6 +33,10 @@ python -m streamlit run app.py
 python -m pytest
 ```
 
+## Architecture Diagram
+
+![Architecture Diagram](architecture.png)
+
 ## 🕵️‍♂️ Your Mission
 
 The goal of this project was to investigate, document, and repair bugs in an AI-generated Streamlit guessing game. I used AI as a coding teammate, but I reviewed each suggestion carefully, tested the code, and made final decisions based on the actual game behavior.

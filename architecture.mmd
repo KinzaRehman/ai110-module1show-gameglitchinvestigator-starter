@@ -1,0 +1,38 @@
+flowchart TD
+    A[User plays guessing game] --> B[app.py Streamlit UI]
+
+    B --> C[get_range_for_difficulty]
+    B --> D[parse_guess]
+    B --> E[validate_guess_in_range]
+    B --> F[check_guess]
+    B --> G[update_score]
+
+    C --> C1[Easy: 1-10]
+    C --> C2[Normal: 1-50]
+    C --> C3[Hard: 1-100]
+
+    D --> D1[Reject blank input]
+    D --> D2[Reject decimals]
+    D --> D3[Convert whole number input]
+
+    E --> E1[Reject guesses outside range]
+
+    F --> F1[Too Low: Go HIGHER]
+    F --> F2[Too High: Go LOWER]
+    F --> F3[Win: Correct]
+
+    G --> G1[Wrong guesses keep score same]
+    G --> G2[Win adds positive score]
+
+    B --> H[Streamlit session_state]
+    H --> H1[secret number]
+    H --> H2[attempts]
+    H --> H3[score]
+    H --> H4[status]
+    H --> H5[history]
+
+    I[tests/test_game_logic.py] --> C
+    I --> D
+    I --> E
+    I --> F
+    I --> G
